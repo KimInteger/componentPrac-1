@@ -1,8 +1,8 @@
-const component = () => {
+const component = (age,job) => {
   let obj = {
     name : "인티저 김",
-    age : 20,
-    job: "開発者"
+    age : age,
+    job: job
   };
 
   let innerFunc = () => {
@@ -11,12 +11,21 @@ const component = () => {
     } else {
       return ("やっぱ、夏には牛乳が最高！");
     }
-  }
+  };
+
+  let anotherFunc = () => {
+    if (obj.job === '開発者') {
+      return '아니잖아?'
+    } else {
+      return '개발자가 되도록 노력하세요.'
+    }
+  };
 
   return `
   <h1>${obj.name}</h1>
   <h2>${innerFunc()}</h2>
+  <h2>${anotherFunc()}</h2>
   `;
 }
 
-console.log(component());
+console.log(component(40,'kaiten'));

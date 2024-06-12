@@ -73,7 +73,7 @@ const component = (data={}) => {
 
 };
 
-let a = component(new BasicData('김정수','29', 20));
+let a = component(new BasicData('김정수',35, '인티저'));
 console.log(a);
 
 console.log(component(new BasicData('김인티저',29,'정수')));

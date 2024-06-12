@@ -48,7 +48,15 @@ const component = (data={}) => {
   let obj = data;
 
   const decision = () => {
-
+    if(obj instanceof BasicData) {
+      return obj;
+    } else {
+      return {
+        name : '아닌데영?',
+        age : 12,
+        job : "이거 양식아님!"
+      };
+    }
   };
 
   return `
@@ -57,9 +65,9 @@ const component = (data={}) => {
     <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width initial-scale=1.0">
-      <title>${obj.name}</title>
+      <title>${decision().name}</title>
     </head>
-    <body>${obj.age} ${obj.job}</body>
+    <body>${decision().age} ${decision().job}</body>
   </html>
   `;
 
@@ -69,3 +77,4 @@ let a = component(new BasicData('김정수','29', 20));
 console.log(a);
 
 console.log(component(new BasicData('김인티저',29,'정수')));
+console.log(component(basicData()));
